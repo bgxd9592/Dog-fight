@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 5381894}
   m_Layer: 5
   m_Name: KSZZ
-  m_TagString: Untagged
+  m_TagString: KSZZ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -471,6 +471,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -46.114002, y: 30.311, z: 3.9550002}
+--- !u!1001 &208797186
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1346472896742219701, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: KSZZ
+      value: 
+      objectReference: {fileID: 5381895}
+    - target: {fileID: 1961164154899707866, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 634.6959
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -165.11923
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 417.6644
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048400137381403974, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614497611434095986, guid: 047e5c227c31ef44282144c9c7bedfbb,
+        type: 3}
+      propertyPath: m_Name
+      value: Time
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 047e5c227c31ef44282144c9c7bedfbb, type: 3}
 --- !u!1 &409454362
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +630,7 @@ GameObject:
   - component: {fileID: 538401080}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: KSZZ
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

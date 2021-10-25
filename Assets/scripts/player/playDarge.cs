@@ -41,6 +41,7 @@ public class playDarge : MonoBehaviourPun,IPunObservable
             PZZ = Collider.gameObject;
             PZZID = Collider.gameObject.GetComponent<PhotonView>().ViewID;
         }
+        if (PZZ == null) return;
         if (AN.GetBool("Attack") && PZZ.tag == "memm")
         {
             PZZ.GetComponent<TurtleShell>().HP -= player.GetComponent<playermove>().AttackDage;

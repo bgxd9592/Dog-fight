@@ -18,6 +18,8 @@ public class time : MonoBehaviourPun, IPunObservable
     void Start()
     {
         KSZZ = GameObject.FindWithTag("KSZZ");
+        KSZZ.GetComponent<Text>().text = "玩家伤害已启动!!";
+        KSZZ.SetActive(false);
         if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
         playerlist = 0;
         HHKS = false;
@@ -30,7 +32,7 @@ public class time : MonoBehaviourPun, IPunObservable
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(playerlist>1 && !one)
+        if (playerlist>1 && !one)
         {
             player = GameObject.FindWithTag("playering");
             if (player != null) player.transform.position = new Vector3(Random.Range(162, 759), 0, Random.Range(256, 825));
@@ -40,18 +42,13 @@ public class time : MonoBehaviourPun, IPunObservable
                 SJJ = PhotonNetwork.Time + 300;
                 SFKS = true;
             }
-        }else if (SJS != 0 && playerlist <= 1)
-        {
-            player = GameObject.FindWithTag("playering");
-            if (player != null) player.GetComponent<playermove>().LKYS();
         }
-        if (KSZZ == null) KSZZ = GameObject.FindWithTag("KSZZ");
         if (SFKS)
         {
             if (PhotonNetwork.Time >= SJJ)
             {
                 FJGB = true;
-                KSZZ.GetComponent<Text>().text = "玩家伤害已启动!!";
+                KSZZ.SetActive(true);
                 Invoke("KSZZExit", 3);
                 if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
                 HHKS = true;

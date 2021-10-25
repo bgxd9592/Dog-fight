@@ -26,8 +26,8 @@ public class TurtleShell : MonoBehaviourPun, IPunObservable
     void Start()
     {
         TurtleS = GetComponent<Rigidbody>();
-        if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
         HP = 10F;
+        if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
         HPMax = 10F;
         DIDI.SetActive(false);
         Movespeed = 10F;
@@ -40,8 +40,8 @@ public class TurtleShell : MonoBehaviourPun, IPunObservable
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
         HPJC();
+        if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
         if (player != null)
         {
             if (!player.GetComponent<playermove>().Die)

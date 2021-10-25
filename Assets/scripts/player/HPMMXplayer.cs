@@ -31,6 +31,7 @@ public class HPMMXplayer : MonoBehaviour
         else if (HP == null)
         {
             Destroy(transform.parent.parent.gameObject);
+            Debug.Log("血条修饰");
         }
     }
 }
