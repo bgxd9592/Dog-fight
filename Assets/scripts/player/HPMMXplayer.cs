@@ -5,45 +5,20 @@ using UnityEngine.UI;
 
 public class HPMMXplayer : MonoBehaviour
 {
-    GameObject ls;
     public GameObject name;
     public Vector3 V3 = new Vector3(0,1.5F,0);
     public GameObject HP;
-    Scrollbar XT;
-    bool linshi;
+    public Scrollbar XT;
     // Update is called once per frame
     void Start()
     {
-        linshi = false;
+        name.GetComponent<Text>().text = HP.GetComponent<playermove>().name;
     }
     void FixedUpdate()
     {
-        if(linshi)
-        {
-            Invoke("YCZX", 3);
-            return;
-        }
-        if (HP != null)
-        {
-            name.transform.position = Camera.main.WorldToScreenPoint(HP.transform.position + V3);
-            ls.transform.position = HP.transform.position;
-            transform.position = Camera.main.WorldToScreenPoint(HP.transform.position + V3);
-            XT.size = HP.GetComponent<playermove>().HP/ HP.GetComponent<playermove>().HPMax;
-            if (HP.GetComponent<playermove>().HP <= 0) Destroy(transform.parent.parent.gameObject);
-        }
-        else if (HP == null)
-        {
-            Destroy(transform.parent.parent.gameObject);
-            Debug.Log("血条修饰");
-        }
-    }
-    void YCZX()
-    {
-        linshi = true;
-        if (HP == null) HP = transform.parent.parent.gameObject;
-        ls = new GameObject("ls");
-        transform.parent.parent = ls.transform;
-        XT = GetComponent<Scrollbar>();
+        if (GameObject.FindWithTag("playering") == null) return;
         name.GetComponent<Text>().text = HP.GetComponent<playermove>().name;
+        transform.LookAt(new Vector3(GameObject.FindWithTag("playering").transform.position.x, transform.position.y, GameObject.FindWithTag("playering").transform.position.z));
+        XT.size = HP.GetComponent<playermove>().HP/ HP.GetComponent<playermove>().HPMax;
     }
 }

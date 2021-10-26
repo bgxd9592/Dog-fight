@@ -13,6 +13,7 @@ public class Audio : MonoBehaviour
     void Start()
     {
         AudioSou = GetComponent<AudioSource>();
+        C = -1;
     }
     void FixedUpdate()
     {
@@ -23,19 +24,21 @@ public class Audio : MonoBehaviour
             
         }else if (GameObject.FindWithTag("Time") == null) return;
         C = (int)GameObject.FindWithTag("Time").GetComponent<time>().SJS;
-        if (C > 50 && AudioSou.isPlaying != QS)
+        if (C > 50)
         {
+            if (AudioSou.clip == QS) return;
             AudioSou.clip = QS;
             AudioSou.Play();
-        }
-        if (C <= 50 && C > 0 && AudioSou.clip != KS)
+        }else
+        if (C <= 50 && C > 0)
         {
+            if (AudioSou.clip == KS) return;
             AudioSou.clip = KS;
             AudioSou.Play();
-        }
-        if (C == 0 && AudioSou.clip != RAN)
+        }else
+        if (C == 0)
         {
-            Debug.Log("执行");
+            if (AudioSou.clip == RAN) return;
             AudioSou.clip = RAN;
             AudioSou.Play();
         }

@@ -173,7 +173,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DIDI: {fileID: 4524835560446936347}
   player: {fileID: 0}
-  HPCC: 0
   HP: 0
   Shell: {fileID: 9026769870696916978}
   AttackDage: 0
