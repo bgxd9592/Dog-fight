@@ -10,16 +10,19 @@ public class HPMMXplayer : MonoBehaviour
     public Vector3 V3 = new Vector3(0,1.5F,0);
     public GameObject HP;
     Scrollbar XT;
+    bool linshi;
     // Update is called once per frame
     void Start()
     {
-        ls = new GameObject("ls");
-        transform.parent.parent = ls.transform;
-        XT = GetComponent<Scrollbar>();
-        name.GetComponent<Text>().text = HP.GetComponent<playermove>().name;
+        linshi = false;
     }
     void FixedUpdate()
     {
+        if(linshi)
+        {
+            Invoke("YCZX", 3);
+            return;
+        }
         if (HP != null)
         {
             name.transform.position = Camera.main.WorldToScreenPoint(HP.transform.position + V3);
@@ -33,5 +36,14 @@ public class HPMMXplayer : MonoBehaviour
             Destroy(transform.parent.parent.gameObject);
             Debug.Log("血条修饰");
         }
+    }
+    void YCZX()
+    {
+        linshi = true;
+        if (HP == null) HP = transform.parent.parent.gameObject;
+        ls = new GameObject("ls");
+        transform.parent.parent = ls.transform;
+        XT = GetComponent<Scrollbar>();
+        name.GetComponent<Text>().text = HP.GetComponent<playermove>().name;
     }
 }

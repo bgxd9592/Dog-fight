@@ -6,26 +6,32 @@ using Photon.Pun.Demo.PunBasics;
 
 public class PGGmove : MonoBehaviourPun
 {
+    public GameObject SWSJ;
+    CameraWork _cameraWork;
     // Start is called before the first frame update
     void Start()
     {
-        CameraWork _cameraWork = gameObject.GetComponent<CameraWork>();
+        _cameraWork = gameObject.GetComponent<CameraWork>();
         if (_cameraWork != null)
         {
-            if (photonView.IsMine)
-            {
-                _cameraWork.OnStartFollowing();
-            }
+            _cameraWork.OnStartFollowing();
         }
+        SWSJ.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        _cameraWork.OnStartFollowing();
         float X = Input.GetAxis("Vertical");
         float XX = Input.GetAxis("Horizontal");
         float Y = Input.GetAxis("Mouse X");
-        transform.Translate(X* Time.deltaTime*50, 0, XX* Time.deltaTime * 50);
+        transform.Translate(XX* Time.deltaTime*50, 0, X* Time.deltaTime * 50);
         transform.Rotate(0, Y* Time.deltaTime * 50, 0);
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            PhotonNetwork.LeaveRoom();
+            PhotonNetwork.LoadLevel(0);
+        }
     }
 }

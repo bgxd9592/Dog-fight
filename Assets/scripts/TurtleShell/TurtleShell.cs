@@ -9,8 +9,6 @@ public class TurtleShell : MonoBehaviourPun, IPunObservable
     public GameObject DIDI;
     //引入玩家
     public GameObject player;
-    //定义血量差值
-    public float HPCC;
     //定义血量
     public float HP;
     //定义动画
@@ -46,8 +44,10 @@ public class TurtleShell : MonoBehaviourPun, IPunObservable
         {
             if (!player.GetComponent<playermove>().Die)
             {
-                ZDXD();
-                HPCC = HP / HPMax;
+                if(HP>0)
+                {
+                    ZDXD();
+                }
             }else player = GameObject.FindWithTag("Player");
         }
     }
@@ -66,6 +66,11 @@ public class TurtleShell : MonoBehaviourPun, IPunObservable
             gameObject.tag = "Die";
             TurtleS.detectCollisions = false;
             TurtleS.useGravity = false;
+        }else if(HP > 0 && !photonView.IsMine)
+        {
+            gameObject.tag = "MM";
+            TurtleS.detectCollisions = true;
+            TurtleS.useGravity = true;
         }
     }
 

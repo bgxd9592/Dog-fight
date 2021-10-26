@@ -24,12 +24,6 @@ public class HPMMX : MonoBehaviour
         {
             ls.transform.position = tagg.position;
             transform.position = Camera.main.WorldToScreenPoint(ls.transform.position + V3);
-            XT.size = HP.GetComponent<TurtleShell>().HPCC;
         }
-        if(HP.GetComponent<TurtleShell>().HPCC<=0 || tagg == null)
-        {
-            Destroy(ls);
-        }
-        
     }
 }

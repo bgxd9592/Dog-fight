@@ -25,7 +25,7 @@ public class time : MonoBehaviourPun, IPunObservable
         HHKS = false;
         SFKS = false;
         one = false;
-        SJS = 0;
+        SJS = -1;
         FJGB = false;
     }
 

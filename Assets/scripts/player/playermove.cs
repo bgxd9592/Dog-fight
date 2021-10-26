@@ -7,6 +7,7 @@ using Photon.Pun.Demo.PunBasics;
 
 public class playermove : MonoBehaviourPun, IPunObservable
 {
+    GameObject[] GWLB;
     float curtTime = 0;
     float lastTime = 0;
     bool isRendering;
@@ -82,7 +83,7 @@ public class playermove : MonoBehaviourPun, IPunObservable
     void FixedUpdate()
     {
         if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
-        if (HP < 0) SW();
+        if (HP <= 0) SW();
         ms.text = PhotonNetwork.GetPing() + "ms";
         if (Time.time % 3 == 0) SGG();
         if(GameObject.FindWithTag("Time") != null)
@@ -203,6 +204,8 @@ public class playermove : MonoBehaviourPun, IPunObservable
     //(临时)怪物生成
     void SGG()
     {
+        GWLB = GameObject.FindGameObjectsWithTag("memm");
+        if (GWLB.Length >= 30) return;
         if (GameObject.FindWithTag("Time").GetComponent<time>().playerlist > 1)
         {
             PhotonNetwork.Instantiate("TurtleShell", new Vector3(Random.Range(399, 607), 0, Random.Range(372, 618)), Quaternion.identity);
