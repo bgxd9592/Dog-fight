@@ -30,6 +30,8 @@ public class playermove : MonoBehaviourPun, IPunObservable
     public Text HPTTT;
     public Canvas Canvas;
     public Text ms;
+    public GameObject[] oldBBB;
+    public int ID;
     //移动速度相关
     float Movespeed;
     float rotSpeed;
@@ -44,6 +46,7 @@ public class playermove : MonoBehaviourPun, IPunObservable
     //初始化
     void Start()
     {
+        ID = 0;
         AN = GetComponent<Animator>();
         playerFlags = GetComponent<CharacterController>();
         if (photonView.IsMine && PhotonNetwork.IsConnected)
@@ -77,12 +80,22 @@ public class playermove : MonoBehaviourPun, IPunObservable
         Movespeed = 10;
         rotSpeed = 50;
         GGG = true;
+        ID = GameObject.FindWithTag("Time").GetComponent<time>().playerlist;
         Cursor.lockState = CursorLockMode.Locked;
     }
     //参数执行
     void FixedUpdate()
     {
-        if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
+        if (!photonView.IsMine && PhotonNetwork.IsConnected)
+        {
+            if (ID == 0) return;
+            if (oldBBB[ID - 1] != null)
+            {
+                oldBBB[ID - 1].GetComponent<Text>().text = name + "当前积分:" + old;
+            }
+            if (!oldBBB[ID - 1].activeSelf) oldBBB[ID - 1].SetActive(true);
+            return;
+        }
         if (HP <= 0) SW();
         ms.text = PhotonNetwork.GetPing() + "ms";
         if (Time.time % 3 == 0) SGG();
@@ -189,6 +202,7 @@ public class playermove : MonoBehaviourPun, IPunObservable
             stream.SendNext(this.Movespeed);
             stream.SendNext(this.AttackDage);
             stream.SendNext(this.HP);
+            stream.SendNext(this.ID);
         }
         else
         {
@@ -199,6 +213,7 @@ public class playermove : MonoBehaviourPun, IPunObservable
             this.Movespeed = (float)stream.ReceiveNext();
             this.AttackDage = (float)stream.ReceiveNext();
             this.HP = (float)stream.ReceiveNext();
+            this.ID = (int)stream.ReceiveNext();
         }
     }
     //(临时)怪物生成

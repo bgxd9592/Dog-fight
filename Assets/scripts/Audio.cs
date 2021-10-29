@@ -23,7 +23,7 @@ public class Audio : MonoBehaviour
             AudioSou.Play();
             
         }else if (GameObject.FindWithTag("Time") == null) return;
-        C = (int)GameObject.FindWithTag("Time").GetComponent<time>().SJS;
+        if (GameObject.FindWithTag("Time") != null) C = (int)GameObject.FindWithTag("Time").GetComponent<time>().SJS;
         if (C > 50)
         {
             if (AudioSou.clip == QS) return;
