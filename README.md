@@ -4,4 +4,4 @@
 
 ps.本开源中不携带APPID等内容
 
-游玩链接：https://bgxd9592.github.io/WebGL/JKZY/
+游玩链接：https://bgxd9592.github.io/WebGL/GZDZZ
