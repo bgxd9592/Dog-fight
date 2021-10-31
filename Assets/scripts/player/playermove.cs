@@ -81,7 +81,7 @@ public class playermove : MonoBehaviourPun, IPunObservable
         rotSpeed = 50;
         GGG = true;
         ID = GameObject.FindWithTag("Time").GetComponent<time>().playerlist;
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     //参数执行
     void FixedUpdate()
