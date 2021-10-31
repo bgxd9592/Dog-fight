@@ -18,7 +18,7 @@ public class playermove : MonoBehaviourPun, IPunObservable
     public Text Timeing;//引入时间
     public Text olding;
     //引入角色控制器
-    CharacterController playerFlags;
+    public CharacterController playerFlags;
     //引入剑的游戏对象
     public GameObject JIAN;
     //生命值相关
@@ -33,8 +33,8 @@ public class playermove : MonoBehaviourPun, IPunObservable
     public GameObject[] oldBBB;
     public int ID;
     //移动速度相关
-    float Movespeed;
-    float rotSpeed;
+    public float Movespeed;
+    public float rotSpeed;
     //伤害相关
     public float AttackDage;
     //动画相关
@@ -81,7 +81,7 @@ public class playermove : MonoBehaviourPun, IPunObservable
         rotSpeed = 50;
         GGG = true;
         ID = GameObject.FindWithTag("Time").GetComponent<time>().playerlist;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
     //参数执行
     void FixedUpdate()
