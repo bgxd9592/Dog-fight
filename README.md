@@ -1,8 +1,6 @@
 # 狗子大作战
 
-<a href="https://github.com/bgxd9592/Dog-fight/releases"><img src="https://img.shields.io/github/v/release/bgxd9592/Dog-fight?include_prereleases></img></a>
-
-使用版本:2019.4.30f1c1
+<a href="https://github.com/bgxd9592/Dog-fight/releases"><img src="https://img.shields.io/github/v/release/bgxd9592/Dog-fight?include_prereleases"></a>  <img src="https://img.shields.io/badge/unity-2019.4.30f1c1-blue">
 
 ps.本开源中不携带APPID等内容
 
